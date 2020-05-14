@@ -21,7 +21,7 @@ class FamousItem extends Component {
             <h1 onClick={this.Handleclick}>{this.props.title}</h1>
             <h2>{this.props.id}</h2>
             <h3>Total Subscriber - {this.state.count}</h3>
-            <img src={this.state.thumbnailUrl} alt="tumbnail"/>
+            <img src={this.state.thumbnailUrl} alt="thumbnail"/>
         </div>
          );
     }
