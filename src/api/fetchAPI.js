@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const key = "AIzaSyBXWUFsREQ45OYZ8ebNXrunfGhlYrNXdR8"
-/* const id = "UC_vcKmg67vjMP7ciLnSxSHQ" */
-
+const key = process.env.REACT_APP_API_KEY
 // Sample URL 
-// https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=UC_vcKmg67vjMP7ciLnSxSHQ&key=AIzaSyBXWUFsREQ45OYZ8ebNXrunfGhlYrNXdR8
+// https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=UC_vcKmg67vjMP7ciLnSxSHQ&key=[key]
 
 const url = "https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics"
 
