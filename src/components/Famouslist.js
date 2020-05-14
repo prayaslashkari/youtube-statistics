@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Button from '@material-ui/core/Button';
+
 import FamousItem from './FamousItem';
-import { getYoutubers } from './youtuberData';
+import { getYoutubers } from '../data/youtuberData';
 
 const Famouslist = ({onFamous}) => {
 

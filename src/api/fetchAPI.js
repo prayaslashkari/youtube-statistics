@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-
-
 const key = "AIzaSyBXWUFsREQ45OYZ8ebNXrunfGhlYrNXdR8"
 /* const id = "UC_vcKmg67vjMP7ciLnSxSHQ" */
 
@@ -16,7 +14,6 @@ export const fetchData = async (id) =>
     const urlTemp = `${url}&id=${id}&key=${key}`
 
     try {
-
         const response = await axios.get(urlTemp)
         return response
         

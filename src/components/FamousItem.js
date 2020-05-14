@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import youtube from '../api/youtube';
+import { fetchData } from './../api/fetchAPI';
 
 
 
@@ -11,30 +11,9 @@ class FamousItem extends Component {
     }
     async componentDidMount()
     {
-        const {data : {items : [a] }} = await youtube.get('channels',
-        {params : {
-            part: "statistics,snippet",
-            id: this.props.id,
-            key: 'AIzaSyBXWUFsREQ45OYZ8ebNXrunfGhlYrNXdR8',
-        }
-    });
-
-    const data = await youtube.get('channels',
-        {params : {
-            part: "statistics,snippet",
-            id: this.props.id,
-            key: 'AIzaSyBXWUFsREQ45OYZ8ebNXrunfGhlYrNXdR8',
-        }
-    });
-  
-        console.log(data)
-        this.setState({count : a.statistics.subscriberCount, thumbnailUrl : a.snippet.thumbnails.medium.url})
-    }
-
-/*     Handleclick = async() =>
-    {
-        
-    } */
+        const response = fetchData(this.props.id)
+        console.log(response)
+    };
 
     render() { 
         return ( 
