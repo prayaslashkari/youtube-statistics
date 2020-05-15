@@ -2,26 +2,37 @@ import React, {Component} from 'react';
 import { fetchData } from './../api/fetchAPI';
 
 
+var numeral = require('numeral');
+
 
 class FamousItem extends Component {
 
     state = {
-        count : 0,
+        views : 0,
         thumbnailUrl : null,
+        subs : 0,
     }
     async componentDidMount()
     {
-        const response = fetchData(this.props.id)
-        console.log(response)
+       const {data : {items : [a]}} = await fetchData(this.props.id)
+
+       var viewCount = numeral(a.statistics.viewCount).format('0,0');
+       var subsCount = numeral(a.statistics.subscriberCount).format('0,0')
+
+       this.setState ( { 
+        views : viewCount, 
+        thumbnailUrl : a.snippet.thumbnails.medium.url,
+        subs : subsCount })
     };
 
     render() { 
         return ( 
         <div style = {{border : "red solid 1px"}}>
-            <h1 onClick={this.Handleclick}>{this.props.title}</h1>
-            <h2>{this.props.id}</h2>
-            <h3>Total Subscriber - {this.state.count}</h3>
-            <img src={this.state.thumbnailUrl} alt="thumbnail"/>
+           <img src={this.state.thumbnailUrl} alt="thumbnail"/>
+            <h1>{this.props.title}</h1>
+            <h5>Channel Id -{this.props.id}</h5>
+            <h3>Total Views - {this.state.views}</h3>
+            <h3>Total Subcribers - {this.state.subs}</h3>
         </div>
          );
     }

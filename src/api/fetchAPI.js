@@ -13,7 +13,8 @@ export const fetchData = async (id) =>
 
     try {
         const response = await axios.get(urlTemp)
-        return response
+        return response;
+        
         
     } catch (error) {
         console.log(error)
