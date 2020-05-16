@@ -1,29 +1,15 @@
 import React from 'react';
 import {Grid} from '@material-ui/core';
-
-import {SearchBar, VideoDetail, VideoList, Famouslist} from './components';
+import {Route, Switch} from 'react-router-dom';
+import {SearchBar, VideoDetail, VideoList, Famouslist, Navbar} from './components';
 import youtube from './api/youtube';
 
-const para = {
-    params : {
-        part: "snippet,contentDetails,statistics",
-        id: "UC_vcKmg67vjMP7ciLnSxSHQ",
-        key: 'AIzaSyBXWUFsREQ45OYZ8ebNXrunfGhlYrNXdR8',
-    }  
-}
 
 class App extends React.Component {
     state = {
         videos: [],
         selectedVideo: null,
     }
-
-    handleFamous = async () => {
-        const {data : {items}} = await youtube.get('channels', para);
-
-        console.log (items);
-    }
-   
 
     handlePopular = async () =>
     {
@@ -37,7 +23,8 @@ class App extends React.Component {
             }    
         });
         
-        console.log(response);
+        let arr = response.data.items; 
+        this.setState ({videos :arr, selectedVideo : response.data.items[0]});
     }
 
     handleSubmit = async(searchTerm) =>
@@ -69,35 +56,40 @@ class App extends React.Component {
     return ( 
 
         <React.Fragment>
-        
-        <Grid container justify = "center" align = "center">
-            <Grid item xs={12}>
-            <Famouslist onFamous = {this.handleFamous}/>
-            </Grid>
-        </Grid>
+        <Navbar/>
 
-        <Grid container justify = "center" align = "center" >
-
-            <Grid item xs ={12}>
-                <Grid container spacing={2} style={{width:"100%"}}>
-                    <Grid
-                    item xs = {12}
-                    >
-                    <SearchBar onFormSubmit = {this.handleSubmit} onPopular = {this.handlePopular} />
-                    </Grid>
-                    
-                    <Grid 
-                    item xs = {9}>
-                    <VideoDetail video = {selectedVideo}/>
-                    </Grid>
-                    
-                    <Grid item xs = {3}>
-                    <VideoList videos = {videos} onSelectVideo= {this.onSelectVideo}/>
-                    </Grid>
+        <Route path="/leaderboard">
+            <Grid container justify = "center" align = "center">
+                <Grid item xs={12}>
+                    <Famouslist/>
                 </Grid>
             </Grid>
-        </Grid>
+        </Route>
 
+        <Route path="/">
+        
+        </Route>
+
+        <Route path="/search">
+            <Grid container justify = "center" align = "center" >
+                <Grid item xs ={12}>
+                    <Grid container spacing={2} style={{width:"100%"}}>
+                        <Grid item xs = {12}>
+                            <SearchBar onFormSubmit = {this.handleSubmit} onPopular = {this.handlePopular} />
+                        </Grid>
+                        
+                        <Grid item xs = {9}>
+                            <VideoDetail video = {selectedVideo}/>
+                        </Grid>
+                        
+                        <Grid item xs = {3}>
+                            <VideoList videos = {videos} onSelectVideo= {this.onSelectVideo}/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>    
+        </Route>
+        
         </React.Fragment>
     );
     }

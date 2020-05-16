@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import FamousItem from './FamousItem';
 import { getYoutubers } from '../data/youtuberData';
 
-const Famouslist = ({onFamous}) => {
+const Famouslist = () => {
 
     const [data, setData] = useState(getYoutubers());
 
