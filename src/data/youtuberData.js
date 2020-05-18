@@ -50,6 +50,22 @@ const youtubers = [
          title: "Mumbiker Nikhil",
        }, 
 
+       {
+        _id: "UCPtPyb4VvaNqjkbL_tSVFVA",
+         title: "Thugesh",
+       },
+
+       {
+        _id: "UCmXZxX_qexEZxhb5_vQKPCw",
+         title: "Aman Dhattarwal",
+       }, 
+       
+       {
+        _id: "UCbmu9wfzxKls40WkCzvqtRA",
+         title: "Elvish yadav",
+       }, 
+       
+
        
 //
   ];

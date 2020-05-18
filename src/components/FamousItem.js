@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { fetchData } from './../api/fetchAPI';
-
+import './FamousItem.css';
 
 var numeral = require('numeral');
 
@@ -27,12 +27,17 @@ class FamousItem extends Component {
 
     render() { 
         return ( 
-        <div style = {{border : "red solid 1px"}}>
-           <img src={this.state.thumbnailUrl} alt="thumbnail"/>
-            <h1>{this.props.title}</h1>
-            <h5>Channel Id -{this.props.id}</h5>
-            <h3>Total Views - {this.state.views}</h3>
-            <h3>Total Subcribers - {this.state.subs}</h3>
+            
+        <div className="container" style = {{/* border : "red solid 1px" */}}>
+           <img className= "image"  src={this.state.thumbnailUrl} alt="thumbnail"/>
+            <h1 style={{fontSize : "25px", color : "#000000",fontFamily : 'Montserrat'}}>{this.props.title}</h1>
+            <div class="button_cont" align="center">
+                <a style={{fontFamily : 'Montserrat',fontWeight : 'bold'}} class="example_a" href={`www.youtube.com/${this.props.id}`} target="_blank" rel="nofollow noopener">Checkout the Channel</a>
+                </div>
+            <h3 class="text-1" style={{color : "#000000", fontWeight : 'bold', fontFamily : 'Montserrat'}}>Total Views  - </h3>
+            <h4 class="text-2" style={{color : "#1c9eff", fontWeight : 'bold', fontFamily : 'Montserrat'}}> {this.state.views}</h4><br></br>
+            <h3 class="text-1" style={{color : "#000000", fontWeight : 'bold', fontFamily : 'Montserrat'}}>Total Subcribers  - </h3>
+            <h4 class="text-2" style={{color : "#1c9eff", fontWeight : 'bold', fontFamily : 'Montserrat'}}> {this.state.subs}</h4>
         </div>
          );
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid} from '@material-ui/core';
-import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import {SearchBar, VideoDetail, VideoList, Famouslist, Navbar} from './components';
 import youtube from './api/youtube';
 
@@ -56,7 +56,7 @@ class App extends React.Component {
     return ( 
 
         <React.Fragment>
-        <Navbar/>
+        <Navbar onPopular= {this.handlePopular}/>
 
         <Route path="/leaderboard">
             <Grid container justify = "center" align = "center">

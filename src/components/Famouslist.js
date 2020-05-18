@@ -9,9 +9,9 @@ const Famouslist = () => {
 
     return ( 
         <div> 
-            <ul>
+            <div className="container-main">
             {data.map(each => <FamousItem key={each._id} title={each.title} id={each._id}/>)}
-            </ul>
+            </div>
         </div>
      );
 }

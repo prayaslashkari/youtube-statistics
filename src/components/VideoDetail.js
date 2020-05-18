@@ -9,7 +9,7 @@ const VideoDetail = ({video}) => {
 
     var videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
     
-    if(video.id.videoId == undefined)
+    if(video.id.videoId === undefined)
       videoSrc = `https://www.youtube.com/embed/${video.id}`
  
     

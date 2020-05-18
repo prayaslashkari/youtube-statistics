@@ -1,20 +1,25 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './Navbar.css';
+import { FaSearch } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return ( 
-    <ul>
-      <li>
-        <Link to="/">Trending Videos </Link>
-      </li>
-      <li>
-        <Link to="/leaderboard">Youtubers Leaderboard </Link>
-      </li>
-      <li>
-        <Link to="/search">Search </Link>
-      </li>
-     
-    </ul>
+      <div>
+        <ul className="menu">
+          <li onClick= {props.onPopular}>
+            <Link style={{textDecoration: 'none', color : "white"}} to="/search" >Trending Videos </Link>
+          </li>
+
+          <li>
+            <Link style={{textDecoration: 'none',color : "white"}} to="/leaderboard">Youtubers Leaderboard </Link>
+          </li>
+          <li>
+          <Link style={{textDecoration: 'none', color : "white"}} to="/search">Search <FaSearch fontSize='20px'/> </Link>
+          </li>
+        </ul>
+      </div>
+    
      );
 }
  
