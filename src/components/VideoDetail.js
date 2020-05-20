@@ -12,8 +12,6 @@ const VideoDetail = ({video}) => {
     if(video.id.videoId === undefined)
       videoSrc = `https://www.youtube.com/embed/${video.id}`
  
-    
-  
     return (  
         <React.Fragment>      
         <Paper elevation ={6} style= {{width: '100%', height : '40%'}}>

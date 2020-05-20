@@ -1,20 +1,39 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
+import {multiData } from './../api/fetchAPI';
 
 import FamousItem from './FamousItem';
-import { getYoutubers } from '../data/youtuberData';
+/* import { getYoutubers } from '../data/youtuberData'; */
 
-const Famouslist = () => {
+class Famouslist extends Component {
 
-    const [data, setData] = useState(getYoutubers());
+    state = {
+        response : [],
+    }
+    
+    async componentDidMount()
+    {
+       const responses = await multiData();
+       this.setState({response : responses})
+/*        console.log(responses)  */   
+    };
 
-    return ( 
-        <div> 
-            <div className="container-main">
-            {data.map(each => <FamousItem key={each._id} title={each.title} id={each._id}/>)}
-            </div>
-        </div>
-     );
+    render() { 
+        let {response} = this.state;
+        return ( 
+            <div> 
+                <div className="container-main">
+                {response.map(each => 
+                    <FamousItem 
+                        key={each.id} 
+                        thumbURL = {each.snippet.thumbnails.medium.url} 
+                        title={each.snippet.title} 
+                        id={each.id}
+                        views = {each.statistics.viewCount} 
+                        subs = {each.statistics.subscriberCount}/>)}
+                </div>
+        </div> 
+        );
+    }
 }
-
  
 export default Famouslist;

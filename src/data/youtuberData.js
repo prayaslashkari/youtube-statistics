@@ -33,7 +33,7 @@ const youtubers = [
        
        {
         _id: "UCXsXitjiT_8qPgNEFGPVfBA",
-         title: "Gaurav Chaudhary",
+         title: "Technical Guruji",
        },  
        {
         _id: "UCVmEbEQUGXHVm-O9pqa3JWg",
@@ -64,10 +64,33 @@ const youtubers = [
         _id: "UCbmu9wfzxKls40WkCzvqtRA",
          title: "Elvish yadav",
        }, 
-       
 
+       {
+        _id: "UC7sRFTKIbH4NNpFXmpUAWuA",
+         title: "Be YouNick",
+       },
        
-//
+       {
+        _id: "UC9fDC_eBh9e_bogw87DbGKQ",
+         title: "Rachit Jain",
+       }, 
+
+       {
+        _id: "UC7eHZXheF8nVOfwB2PEslMw",
+         title: "Ashish Chanchlani Vines",
+       }, 
+
+       {
+        _id: "UCgoxyzvouZM-tCgsYzrYtyg",
+         title: "Nisha Madhulika",
+       }, 
+
+       {
+        _id: "UCPxMZIFE856tbTfdkdjzTSQ",
+         title: "Beer Biceps",
+       }, 
+       
+       
   ];
   
   export function getYoutubers() {
