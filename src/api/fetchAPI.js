@@ -32,7 +32,5 @@ export const multiData = async () =>
     const kit = response.map(each => each.data.items[0])
     kit.sort((a,b) => b.statistics.subscriberCount - a.statistics.subscriberCount );
   
-    return kit;
-    
-         
+    return kit;      
 }

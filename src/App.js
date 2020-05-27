@@ -22,7 +22,6 @@ class App extends React.Component {
                 regionCode : "IN" 
             }    
         });
-        
         let arr = response.data.items; 
         this.setState ({videos :arr, selectedVideo : response.data.items[0]});
     }
@@ -56,7 +55,7 @@ class App extends React.Component {
     return ( 
 
         <React.Fragment>
-        <Navbar onPopular= {this.handlePopular}/>
+        <Navbar onSubmit={this.handleSubmit} onPopular= {this.handlePopular}/>
 
         <Route path="/leaderboard">
             <Grid container justify = "center" align = "center">

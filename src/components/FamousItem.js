@@ -31,7 +31,7 @@ const FamousItem = (props) => {
     let viewView = test(props.views)
 
     return ( 
-        <div className="container" style = {{/* border : "red solid 1px" */}}>
+        <div className="container" style = {{border : "red solid 1px"}}>
            <img className= "image"  src={props.thumbURL} alt="thumbnail"/>
             <h1 style={{fontSize : "25px", color : "#000000",fontFamily : 'Montserrat'}}>{props.title}</h1>
             <div class="button_cont" align="center">

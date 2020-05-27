@@ -1,0 +1,15 @@
+.leader-nav{
+    font-family: Helvetica;
+    font-weight: 600;
+
+    /* border : red solid 1px; */
+    width : 12%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.leader-nav a {
+    padding: 10px 15px;
+    font-family: Montserrat;
+    font-weight: 500;
+}

@@ -5,20 +5,14 @@ import { FaSearch } from "react-icons/fa";
 
 const Navbar = (props) => {
     return ( 
-      <div>
-        <ul className="menu">
-          <li onClick= {props.onPopular}>
-            <Link style={{textDecoration: 'none', color : "white"}} to="/search" >Trending Videos </Link>
-          </li>
-
-          <li>
-            <Link style={{textDecoration: 'none',color : "white"}} to="/leaderboard">Youtubers Leaderboard </Link>
-          </li>
-          <li>
-          <Link style={{textDecoration: 'none', color : "white"}} to="/search">Search <FaSearch fontSize='20px'/> </Link>
-          </li>
-        </ul>
-      </div>
+      <React.Fragment>
+        <div class="main-header">
+        
+          <Link style={{textDecoration: 'none', color : "black"}} to="/search" onClick= {props.onPopular} >Trending Videos </Link>
+          <Link style={{textDecoration: 'none',color : "black"}} to="/leaderboard">Youtubers Leaderboard </Link>
+          <Link style={{textDecoration: 'none', color : "black"}} to="/search">Search <FaSearch fontSize='20px'/> </Link>
+        </div>
+      </React.Fragment>
     
      );
 }

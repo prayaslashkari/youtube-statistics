@@ -89,7 +89,32 @@ const youtubers = [
         _id: "UCPxMZIFE856tbTfdkdjzTSQ",
          title: "Beer Biceps",
        }, 
-       
+
+       {
+        _id: "UCw-MAyENxFQmVTOLwlg9YkA",
+         title: "Lakshay Chaudhary",
+       }, 
+
+       {
+        _id: "UCtgGOdTlM-NdJ9rPKIYN8UQ",
+         title: "Slayy Point",
+       }, 
+      
+       {
+        _id: "UC0rE2qq81of4fojo-KhO5rg",
+         title: "Tanmay Bhat",
+       }, 
+      
+       {
+        _id: "UCO2WJZKQoDW4Te6NHx4KfTg",
+         title: "GeekyRanjit",
+       }, 
+      
+
+       {
+        _id: "UCXUJJNoP1QupwsYIWFXmsZg",
+         title: "Tech Burner",
+       }, 
        
   ];
   

@@ -39,10 +39,11 @@ class SearchBar extends Component {
             </Button>
 
             <Paper elevation={6} style={{ padding:'25px' }}>  
+
             <form onSubmit= {this.handleSubmit}>
-                
-                    <TextField fullWidth label="Search Videos..." onChange={this.handleChange}/>
-                </form>
+                <TextField fullWidth label="Search Videos..." onChange={this.handleChange}/>
+            </form>
+            
             </Paper>
             </React.Fragment>
             );
