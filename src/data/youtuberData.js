@@ -116,6 +116,11 @@ const youtubers = [
          title: "Tech Burner",
        }, 
        
+       {
+        _id: "UCOhHO2ICt0ti9KAh-QHvttQ",
+         title: "Technical Guruji",
+       }, 
+       
   ];
   
   export function getYoutubers() {
