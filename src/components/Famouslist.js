@@ -6,6 +6,8 @@ import ListItem from './FamousItemList';
 import LeaderNav from './LeaderNav';
 
 import {Route} from 'react-router-dom';
+
+import styles from './test.module.css';
 /* import { getYoutubers } from '../data/youtuberData'; */
 
 class Famouslist extends Component {
@@ -24,8 +26,9 @@ class Famouslist extends Component {
     render() { 
         let {response} = this.state;
         return ( 
-            <div> 
-            <h1> TOP INDIAN YOUTUBERS STATS</h1>
+            <div className={styles.container}> 
+                <h1 className={styles.title}> TOP INDIAN YOUTUBERS STATS</h1>
+                
                 <LeaderNav/>
 
                 <Route exact path="/leaderboard/list">

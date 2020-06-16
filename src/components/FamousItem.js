@@ -24,14 +24,16 @@ function test (labelValue) {
 }
 
 const FamousItem = (props) => {
-    let viewCount = numeral(props.views).format('0,0');
-    let subsCount = numeral(props.subs).format('0,0');
+    /* let viewCount = numeral(props.views).format('0.0a'); */
 
-    let subSub= test(props.subs)
-    let viewView = test(props.views)
+    let viewView = numeral(props.views).format('0.0a');
+    let subSub = numeral(props.subs).format('0.0a');
+
+    /* let subSub= test(props.subs)
+    let viewView = test(props.views) */
 
     return ( 
-        <div className="container" style = {{border : "red solid 1px"}}>
+        <div className="container" style = {{/* border : "red solid 1px" */}}>
            <img className= "image"  src={props.thumbURL} alt="thumbnail"/>
             <h1 style={{fontSize : "25px", color : "#000000",fontFamily : 'Montserrat'}}>{props.title}</h1>
             <div class="button_cont" align="center">

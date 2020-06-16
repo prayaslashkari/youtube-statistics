@@ -12,4 +12,13 @@
     padding: 10px 15px;
     font-family: Montserrat;
     font-weight: 500;
+    color: white;
+    background-color: rgb(255, 73, 49);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.leader-nav a:hover{
+    background: rgb(255, 119, 95);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.0);
 }

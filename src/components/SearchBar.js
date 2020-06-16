@@ -34,9 +34,9 @@ class SearchBar extends Component {
         return ( 
             <React.Fragment>
             
-            <Button variant="contained" color="primary" onClick = {this.handlePopular}>
+            {/* <Button variant="contained" color="primary" onClick = {this.handlePopular}>
             Popular
-            </Button>
+            </Button> */}
 
             <Paper elevation={6} style={{ padding:'25px' }}>  
 
